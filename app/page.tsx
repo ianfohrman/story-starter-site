@@ -426,43 +426,40 @@ export default function Page() {
       <section style={{ backgroundColor: "#fff", padding: "100px 48px", borderTop: "1px solid #e8e8e8" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <p style={{ ...sectionLabel, marginBottom: 48 }}>Why us</p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
-            <p
-              style={{
-                fontSize: "clamp(22px, 2.4vw, 30px)",
-                fontWeight: 400,
-                lineHeight: 1.55,
-                color: "#0a0a0a",
-                letterSpacing: "-0.01em",
-              }}
-            >
-              20+ years making magic with some of the biggest brands in the world (Airstream, Aspen, Smartwool, Coke, and Google). Story Starter takes what works and ditches what doesn&apos;t.
-            </p>
-            <div style={{ paddingTop: 6 }}>
-              <a
-                href="https://vimeo.com/showcase/11062305?share=copy"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 10,
-                  fontSize: 15,
-                  color: "#0a0a0a",
-                  textDecoration: "none",
-                  borderBottom: "1px solid #ccc",
-                  paddingBottom: 2,
-                  fontWeight: 400,
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                The proof is in the pudding. Hear what our clients say.
-                <svg width={12} height={12} viewBox="0 0 12 12" fill="none" style={{ flexShrink: 0 }}>
-                  <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </a>
-            </div>
-          </div>
+          <p
+            style={{
+              fontSize: "clamp(28px, 3.5vw, 48px)",
+              fontWeight: 300,
+              lineHeight: 1.35,
+              color: "#0a0a0a",
+              letterSpacing: "-0.02em",
+              maxWidth: 860,
+              marginBottom: 48,
+            }}
+          >
+            20+ years making magic with some of the biggest brands in the world — Airstream, Aspen, Smartwool, Coke, and Google. Story Starter takes what works and ditches what doesn&apos;t.
+          </p>
+          <a
+            href="https://vimeo.com/showcase/11062305?share=copy"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 10,
+              fontSize: 13,
+              color: "#555",
+              textDecoration: "none",
+              letterSpacing: "0.02em",
+              borderBottom: "1px solid #ddd",
+              paddingBottom: 3,
+            }}
+          >
+            The proof is in the pudding. Hear what our clients say.
+            <svg width={11} height={11} viewBox="0 0 12 12" fill="none" style={{ flexShrink: 0 }}>
+              <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
         </div>
       </section>
 
