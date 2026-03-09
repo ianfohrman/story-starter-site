@@ -1,3 +1,7 @@
+import Image from "next/image";
+
+const CTA_URL = "https://storystarter-one.vercel.app/";
+
 const films = [
   { title: "90s Brand Story" },
   { title: "30s Brand Sizzle" },
@@ -128,6 +132,52 @@ const sectionLabelDark: React.CSSProperties = {
 
 export default function Page() {
   return (
+    <>
+      {/* ── STICKY HEADER ────────────────────────────────────────────────── */}
+      <header
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 100,
+          backgroundColor: "#0a0a0a",
+          borderBottom: "1px solid #1c1c1c",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "0 48px",
+          height: 64,
+        }}
+      >
+        <Image
+          src="/TPW_black_logo.png"
+          alt="The Public Works"
+          width={100}
+          height={32}
+          style={{ filter: "invert(1)", objectFit: "contain" }}
+        />
+        <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
+          <span style={{ fontSize: 12, color: "#444", letterSpacing: "0.06em" }}>Story Starter</span>
+          <a
+            href={CTA_URL}
+            style={{
+              fontSize: 12,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: "#fff",
+              fontWeight: 600,
+              textDecoration: "none",
+              padding: "8px 20px",
+              border: "1px solid #333",
+              borderRadius: 2,
+            }}
+          >
+            Get Started
+          </a>
+        </div>
+      </header>
+
     <main>
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
@@ -140,40 +190,22 @@ export default function Page() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "0 48px",
+          paddingTop: 64,
         }}
       >
-        {/* Nav */}
+        {/* Nav spacer row */}
         <div
           style={{
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "flex-end",
             alignItems: "center",
             padding: "24px 0",
             borderBottom: "1px solid #1c1c1c",
           }}
         >
-          <span style={{ fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: "#666", fontWeight: 500 }}>
-            The Public Works
+          <span style={{ fontSize: 12, color: "#2a2a2a", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+            A packaged production service
           </span>
-          <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
-            <span style={{ fontSize: 12, color: "#333", letterSpacing: "0.06em" }}>Story Starter</span>
-            <a
-              href="mailto:hello@thepublicworks.biz"
-              style={{
-                fontSize: 12,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                color: "#fff",
-                fontWeight: 600,
-                textDecoration: "none",
-                padding: "8px 20px",
-                border: "1px solid #333",
-                borderRadius: 2,
-              }}
-            >
-              Get Started
-            </a>
-          </div>
         </div>
 
         {/* Headline */}
@@ -554,7 +586,7 @@ export default function Page() {
                 move but want a clear, guided process to get there.
               </p>
               <a
-                href="mailto:hello@thepublicworks.biz"
+                href={CTA_URL}
                 style={{
                   display: "inline-block",
                   padding: "14px 32px",
@@ -567,7 +599,7 @@ export default function Page() {
                   borderRadius: 2,
                 }}
               >
-                Let&apos;s talk →
+                Start Your Story →
               </a>
               <p style={{ fontSize: 12, color: "#333" }}>
                 hello@thepublicworks.biz
@@ -585,5 +617,6 @@ export default function Page() {
       </section>
 
     </main>
+    </>
   );
 }
