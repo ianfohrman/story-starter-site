@@ -27,3 +27,136 @@ body {
 .scroll-arrow {
   animation: fadeDown 2s ease-in-out infinite;
 }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  /* Header */
+  .site-header {
+    padding: 0 20px !important;
+  }
+  .site-header-label {
+    display: none !important;
+  }
+
+  /* Hero */
+  .hero-section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .hero-headline {
+    font-size: clamp(36px, 10vw, 56px) !important;
+    margin-bottom: 24px !important;
+  }
+  .hero-subtitle {
+    font-size: 16px !important;
+  }
+  .hero-detail-bar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+  }
+  .hero-detail-items {
+    gap: 24px !important;
+    flex-wrap: wrap !important;
+  }
+  .hero-scroll-hint {
+    display: none !important;
+  }
+
+  /* Section padding */
+  .section-pad {
+    padding: 64px 20px !important;
+  }
+  .section-pad-dark {
+    padding: 64px 20px !important;
+  }
+
+  /* 2-column → 1-column */
+  .grid-2col {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* Price + description grid */
+  .grid-price {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    margin-bottom: 48px !important;
+    padding-bottom: 48px !important;
+  }
+  .price-number {
+    font-size: clamp(48px, 14vw, 80px) !important;
+  }
+
+  /* Deliverables grid */
+  .grid-deliverables {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  /* Process step: 3-col → 2-col (hide number, title + body side by side) */
+  .process-step {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    padding: 24px 0 !important;
+  }
+  .process-step-number {
+    display: none !important;
+  }
+
+  /* Why it works: 80px + 1fr → 1fr */
+  .why-works-item {
+    grid-template-columns: 48px 1fr !important;
+    gap: 20px !important;
+    padding: 24px 0 !important;
+  }
+  .why-works-number {
+    font-size: 28px !important;
+  }
+
+  /* Add-ons header */
+  .addons-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  .addons-header p {
+    text-align: left !important;
+  }
+
+  /* Add-ons grid */
+  .grid-addons {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer grid */
+  .grid-footer {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+    margin-bottom: 48px !important;
+    padding-bottom: 48px !important;
+  }
+  .footer-heading {
+    font-size: clamp(32px, 9vw, 52px) !important;
+  }
+
+  /* Why Us quote */
+  .why-us-quote {
+    font-size: clamp(22px, 5.5vw, 32px) !important;
+  }
+
+  /* Statement break */
+  .statement-break-text {
+    font-size: clamp(22px, 5.5vw, 36px) !important;
+  }
+
+  /* Process intro grid */
+  .grid-process-intro {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    margin-bottom: 40px !important;
+    padding-bottom: 40px !important;
+  }
+}

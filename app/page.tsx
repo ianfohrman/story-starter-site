@@ -135,6 +135,7 @@ export default function Page() {
     <>
       {/* ── STICKY HEADER ────────────────────────────────────────────────── */}
       <header
+        className="site-header"
         style={{
           position: "fixed",
           top: 0,
@@ -158,7 +159,7 @@ export default function Page() {
           style={{ objectFit: "contain" }}
         />
         <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
-          <span style={{ fontSize: 12, color: "#444", letterSpacing: "0.06em" }}>Story Starter</span>
+          <span className="site-header-label" style={{ fontSize: 12, color: "#444", letterSpacing: "0.06em" }}>Story Starter</span>
           <a
             href={CTA_URL}
             style={{
@@ -182,6 +183,7 @@ export default function Page() {
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section
+        className="hero-section"
         style={{
           minHeight: "100vh",
           backgroundColor: "#0a0a0a",
@@ -211,6 +213,7 @@ export default function Page() {
         {/* Headline */}
         <div style={{ paddingTop: 40, paddingBottom: 40 }}>
           <h1
+            className="hero-headline"
             style={{
               fontSize: "clamp(56px, 9vw, 120px)",
               fontWeight: 700,
@@ -229,13 +232,14 @@ export default function Page() {
             <br />
             to grow.
           </h1>
-          <p style={{ fontSize: 20, color: "#888", fontWeight: 300, maxWidth: 520, lineHeight: 1.6, marginBottom: 0 }}>
+          <p className="hero-subtitle" style={{ fontSize: 20, color: "#888", fontWeight: 300, maxWidth: 520, lineHeight: 1.6, marginBottom: 0 }}>
             Photo and video. Flat rate. Delivered in two weeks.
           </p>
         </div>
 
         {/* Bottom detail bar */}
         <div
+          className="hero-detail-bar"
           style={{
             display: "flex",
             justifyContent: "space-between",
@@ -244,7 +248,7 @@ export default function Page() {
             borderTop: "1px solid #1c1c1c",
           }}
         >
-          <div style={{ display: "flex", gap: 40 }}>
+          <div className="hero-detail-items" style={{ display: "flex", gap: 40 }}>
             {[
               { label: "Price", value: "$13,000 flat" },
               { label: "Timeline", value: "14-day delivery" },
@@ -258,7 +262,7 @@ export default function Page() {
               </div>
             ))}
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <div className="hero-scroll-hint" style={{ display: "flex", alignItems: "center", gap: 10 }}>
             <svg className="scroll-arrow" width={14} height={14} viewBox="0 0 16 16" fill="none" style={{ color: "#333" }}>
               <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -268,10 +272,10 @@ export default function Page() {
       </section>
 
       {/* ── WHO THIS IS FOR ──────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#fff", padding: "100px 48px", borderTop: "1px solid #e8e8e8" }}>
+      <section className="section-pad" style={{ backgroundColor: "#fff", padding: "100px 48px", borderTop: "1px solid #e8e8e8" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <p style={{ ...sectionLabel, marginBottom: 48 }}>Who this is for</p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
+          <div className="grid-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
             <p
               style={{
                 fontSize: "clamp(22px, 2.4vw, 30px)",
@@ -302,9 +306,10 @@ export default function Page() {
       </section>
 
       {/* ── STATEMENT BREAK ──────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#0a0a0a", padding: "100px 48px" }}>
+      <section className="section-pad-dark" style={{ backgroundColor: "#0a0a0a", padding: "100px 48px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <p
+            className="statement-break-text"
             style={{
               fontSize: "clamp(32px, 4.5vw, 64px)",
               fontWeight: 300,
@@ -323,15 +328,16 @@ export default function Page() {
       </section>
 
       {/* ── WHAT YOU GET ─────────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#f5f5f5", padding: "100px 48px", borderTop: "1px solid #e8e8e8" }}>
+      <section className="section-pad" style={{ backgroundColor: "#f5f5f5", padding: "100px 48px", borderTop: "1px solid #e8e8e8" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
           <p style={{ ...sectionLabel, marginBottom: 48 }}>What you get</p>
 
           {/* Price */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "end", marginBottom: 72, paddingBottom: 72, borderBottom: "1px solid #e0e0e0" }}>
+          <div className="grid-price" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "end", marginBottom: 72, paddingBottom: 72, borderBottom: "1px solid #e0e0e0" }}>
             <div>
               <p
+                className="price-number"
                 style={{
                   fontSize: "clamp(64px, 9vw, 112px)",
                   fontWeight: 700,
@@ -355,7 +361,7 @@ export default function Page() {
           </div>
 
           {/* Deliverables */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 80px" }}>
+          <div className="grid-deliverables" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 80px" }}>
 
             {/* Films */}
             <div>
@@ -423,10 +429,11 @@ export default function Page() {
       </section>
 
       {/* ── WHY US ───────────────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#fff", padding: "100px 48px", borderTop: "1px solid #e8e8e8" }}>
+      <section className="section-pad" style={{ backgroundColor: "#fff", padding: "100px 48px", borderTop: "1px solid #e8e8e8" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <p style={{ ...sectionLabel, marginBottom: 48 }}>Why us</p>
           <p
+            className="why-us-quote"
             style={{
               fontSize: "clamp(28px, 3.5vw, 48px)",
               fontWeight: 300,
@@ -464,13 +471,13 @@ export default function Page() {
       </section>
 
       {/* ── THE PROCESS ──────────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#fff", padding: "100px 48px", borderTop: "1px solid #e8e8e8" }}>
+      <section className="section-pad" style={{ backgroundColor: "#fff", padding: "100px 48px", borderTop: "1px solid #e8e8e8" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
           <p style={{ ...sectionLabel, marginBottom: 48 }}>The process</p>
 
           {/* Intro */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, marginBottom: 72, paddingBottom: 72, borderBottom: "1px solid #ebebeb" }}>
+          <div className="grid-process-intro" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, marginBottom: 72, paddingBottom: 72, borderBottom: "1px solid #ebebeb" }}>
             <p style={{ fontSize: "clamp(22px, 2.2vw, 28px)", fontWeight: 400, lineHeight: 1.5, color: "#0a0a0a", letterSpacing: "-0.01em" }}>
               A tight, predictable workflow that respects your time.
             </p>
@@ -489,6 +496,7 @@ export default function Page() {
             {steps.map((step, i) => (
               <div
                 key={i}
+                className="process-step"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "80px 1fr 1fr",
@@ -499,6 +507,7 @@ export default function Page() {
                 }}
               >
                 <span
+                  className="process-step-number"
                   style={{
                     fontSize: 40,
                     fontWeight: 700,
@@ -530,13 +539,14 @@ export default function Page() {
       </section>
 
       {/* ── WHY STORY STARTER WORKS ──────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#0a0a0a", padding: "100px 48px" }}>
+      <section className="section-pad-dark" style={{ backgroundColor: "#0a0a0a", padding: "100px 48px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <p style={{ ...sectionLabelDark, marginBottom: 64 }}>Why it works</p>
           <ul style={{ listStyle: "none" }}>
             {reasons.map((r, i) => (
               <li
                 key={i}
+                className="why-works-item"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "80px 1fr",
@@ -547,7 +557,7 @@ export default function Page() {
                   alignItems: "center",
                 }}
               >
-                <span style={{ fontSize: 40, fontWeight: 700, color: "#1e1e1e", lineHeight: 1, letterSpacing: "-0.02em" }}>
+                <span className="why-works-number" style={{ fontSize: 40, fontWeight: 700, color: "#1e1e1e", lineHeight: 1, letterSpacing: "-0.02em" }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span style={{ fontSize: "clamp(18px, 2vw, 22px)", fontWeight: 300, lineHeight: 1.5, color: "#d0d0d0" }}>
@@ -560,17 +570,17 @@ export default function Page() {
       </section>
 
       {/* ── ADD-ONS ──────────────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#fff", padding: "100px 48px", borderTop: "1px solid #e8e8e8" }}>
+      <section className="section-pad" style={{ backgroundColor: "#fff", padding: "100px 48px", borderTop: "1px solid #e8e8e8" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 64, paddingBottom: 48, borderBottom: "1px solid #ebebeb" }}>
+          <div className="addons-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 64, paddingBottom: 48, borderBottom: "1px solid #ebebeb" }}>
             <p style={sectionLabel}>Add-ons</p>
             <p style={{ fontSize: "clamp(18px, 2vw, 22px)", fontWeight: 300, color: "#0a0a0a", maxWidth: 480, textAlign: "right", lineHeight: 1.5 }}>
               Customize your package with any of the following.
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 80px" }}>
+          <div className="grid-addons" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 80px" }}>
             {addons.map((a, i) => (
               <div
                 key={i}
@@ -602,12 +612,13 @@ export default function Page() {
       </section>
 
       {/* ── FOOTER ───────────────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#0a0a0a", padding: "100px 48px", color: "#fff", borderTop: "1px solid #1a1a1a" }}>
+      <section className="section-pad-dark" style={{ backgroundColor: "#0a0a0a", padding: "100px 48px", color: "#fff", borderTop: "1px solid #1a1a1a" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "end", marginBottom: 80, paddingBottom: 80, borderBottom: "1px solid #1a1a1a" }}>
+          <div className="grid-footer" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "end", marginBottom: 80, paddingBottom: 80, borderBottom: "1px solid #1a1a1a" }}>
             <div>
               <p style={{ ...sectionLabelDark, marginBottom: 32 }}>The Public Works</p>
               <h2
+                className="footer-heading"
                 style={{
                   fontSize: "clamp(40px, 5.5vw, 80px)",
                   fontWeight: 700,
