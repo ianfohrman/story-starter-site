@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff;
+  color: #0a0a0a;
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes fadeDown {
+  0% { opacity: 0; transform: translateY(-6px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(6px); }
+}
+
+.scroll-arrow {
+  animation: fadeDown 2s ease-in-out infinite;
+}
