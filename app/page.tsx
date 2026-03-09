@@ -141,8 +141,8 @@ export default function Page() {
           left: 0,
           right: 0,
           zIndex: 100,
-          backgroundColor: "#0a0a0a",
-          borderBottom: "1px solid #1c1c1c",
+          backgroundColor: "#fff",
+          borderBottom: "1px solid #e8e8e8",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
@@ -153,12 +153,12 @@ export default function Page() {
         <Image
           src="/TPW_black_logo.png"
           alt="The Public Works"
-          width={100}
-          height={32}
-          style={{ filter: "invert(1)", objectFit: "contain" }}
+          width={125}
+          height={40}
+          style={{ objectFit: "contain" }}
         />
         <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
-          <span style={{ fontSize: 12, color: "#444", letterSpacing: "0.06em" }}>Story Starter</span>
+          <span style={{ fontSize: 12, color: "#aaa", letterSpacing: "0.06em" }}>Story Starter</span>
           <a
             href={CTA_URL}
             style={{
@@ -169,7 +169,7 @@ export default function Page() {
               fontWeight: 600,
               textDecoration: "none",
               padding: "8px 20px",
-              border: "1px solid #333",
+              backgroundColor: "#0a0a0a",
               borderRadius: 2,
             }}
           >
