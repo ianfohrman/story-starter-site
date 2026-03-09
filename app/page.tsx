@@ -112,6 +112,20 @@ const addons = [
   },
 ];
 
+// Shared label style
+const sectionLabel: React.CSSProperties = {
+  fontSize: 11,
+  letterSpacing: "0.14em",
+  textTransform: "uppercase",
+  color: "#999",
+  fontWeight: 600,
+};
+
+const sectionLabelDark: React.CSSProperties = {
+  ...sectionLabel,
+  color: "#444",
+};
+
 export default function Page() {
   return (
     <main>
@@ -125,43 +139,54 @@ export default function Page() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          padding: "48px",
+          padding: "0 48px",
         }}
       >
-        {/* Top bar */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span style={{ fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: "#555", fontWeight: 500 }}>
+        {/* Nav */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "24px 0",
+            borderBottom: "1px solid #1c1c1c",
+          }}
+        >
+          <span style={{ fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: "#666", fontWeight: 500 }}>
             The Public Works
           </span>
-          <a
-            href="mailto:hello@thepublicworks.biz"
-            style={{
-              fontSize: 12,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              color: "#555",
-              fontWeight: 500,
-              textDecoration: "none",
-              transition: "color 0.15s",
-            }}
-          >
-            Get Started
-          </a>
+          <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
+            <span style={{ fontSize: 12, color: "#333", letterSpacing: "0.06em" }}>Story Starter</span>
+            <a
+              href="mailto:hello@thepublicworks.biz"
+              style={{
+                fontSize: 12,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: "#fff",
+                fontWeight: 600,
+                textDecoration: "none",
+                padding: "8px 20px",
+                border: "1px solid #333",
+                borderRadius: 2,
+              }}
+            >
+              Get Started
+            </a>
+          </div>
         </div>
 
-        {/* Center headline */}
-        <div style={{ maxWidth: 960, paddingTop: 80 }}>
-          <p style={{ fontSize: 13, letterSpacing: "0.1em", textTransform: "uppercase", color: "#555", marginBottom: 32, fontWeight: 500 }}>
-            Story Starter
-          </p>
+        {/* Headline */}
+        <div style={{ paddingTop: 40, paddingBottom: 40 }}>
           <h1
             style={{
-              fontSize: "clamp(52px, 8vw, 112px)",
+              fontSize: "clamp(56px, 9vw, 120px)",
               fontWeight: 700,
-              lineHeight: 1.0,
-              letterSpacing: "-0.03em",
-              marginBottom: 40,
+              lineHeight: 0.95,
+              letterSpacing: "-0.035em",
               color: "#fff",
+              marginBottom: 48,
+              maxWidth: 1000,
             }}
           >
             A packaged
@@ -172,255 +197,289 @@ export default function Page() {
             <br />
             to grow.
           </h1>
-          <p style={{ fontSize: 18, color: "#777", fontWeight: 300, maxWidth: 480, lineHeight: 1.6 }}>
+          <p style={{ fontSize: 20, color: "#888", fontWeight: 300, maxWidth: 520, lineHeight: 1.6, marginBottom: 0 }}>
             Photo and video. Flat rate. Delivered in two weeks.
           </p>
         </div>
 
-        {/* Scroll indicator */}
-        <div style={{ display: "flex", alignItems: "center", gap: 12, paddingTop: 80 }}>
-          <svg
-            className="scroll-arrow"
-            width={16}
-            height={16}
-            viewBox="0 0 16 16"
-            fill="none"
-            style={{ color: "#444" }}
-          >
-            <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          <span style={{ fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: "#444" }}>Scroll</span>
+        {/* Bottom detail bar */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "20px 0",
+            borderTop: "1px solid #1c1c1c",
+          }}
+        >
+          <div style={{ display: "flex", gap: 40 }}>
+            {[
+              { label: "Price", value: "$13,000 flat" },
+              { label: "Timeline", value: "14-day delivery" },
+              { label: "On-site", value: "One production day" },
+            ].map((item) => (
+              <div key={item.label}>
+                <p style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "#333", marginBottom: 4 }}>
+                  {item.label}
+                </p>
+                <p style={{ fontSize: 13, color: "#888", fontWeight: 400 }}>{item.value}</p>
+              </div>
+            ))}
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <svg className="scroll-arrow" width={14} height={14} viewBox="0 0 16 16" fill="none" style={{ color: "#333" }}>
+              <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <span style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "#333" }}>Scroll</span>
+          </div>
         </div>
       </section>
 
       {/* ── WHO THIS IS FOR ──────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#fff", padding: "120px 48px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "200px 1fr", gap: 80, alignItems: "start" }}>
-          <div style={{ paddingTop: 6 }}>
-            <p style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#bbb", fontWeight: 500 }}>
-              Who this is for
-            </p>
-          </div>
-          <div>
+      <section style={{ backgroundColor: "#fff", padding: "100px 48px", borderTop: "1px solid #e8e8e8" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <p style={{ ...sectionLabel, marginBottom: 48 }}>Who this is for</p>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
             <p
               style={{
-                fontSize: "clamp(22px, 2.5vw, 30px)",
-                fontWeight: 300,
-                lineHeight: 1.6,
+                fontSize: "clamp(22px, 2.4vw, 30px)",
+                fontWeight: 400,
+                lineHeight: 1.55,
                 color: "#0a0a0a",
-                marginBottom: 36,
+                letterSpacing: "-0.01em",
               }}
             >
               Startups, small businesses, and any company that knows they need
               content but doesn&apos;t know where to start — or doesn&apos;t
               have the bandwidth to do it themselves.
             </p>
-            <p style={{ fontSize: 16, lineHeight: 1.85, color: "#666", marginBottom: 20 }}>
-              If you need to tell your story, build trust, and find an audience,
-              Story Starter gives you a seamless, low-lift, proven process for
-              creating the essential assets every brand needs.
-            </p>
-            <p style={{ fontSize: 16, lineHeight: 1.85, color: "#666" }}>
-              Whether you&apos;re looking to build awareness, generate traffic,
-              or make the phone ring, our process is built to address your
-              target audience and goals.
-            </p>
+            <div>
+              <p style={{ fontSize: 16, lineHeight: 1.9, color: "#555", marginBottom: 24 }}>
+                If you need to tell your story, build trust, and find an audience,
+                Story Starter gives you a seamless, low-lift, proven process for
+                creating the essential assets every brand needs.
+              </p>
+              <p style={{ fontSize: 16, lineHeight: 1.9, color: "#555" }}>
+                Whether you&apos;re looking to build awareness, generate traffic,
+                or make the phone ring, our process is built to address your
+                target audience and goals.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* ── STATEMENT BREAK ──────────────────────────────────────────────── */}
+      <section style={{ backgroundColor: "#0a0a0a", padding: "100px 48px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <p
+            style={{
+              fontSize: "clamp(32px, 4.5vw, 64px)",
+              fontWeight: 300,
+              lineHeight: 1.25,
+              letterSpacing: "-0.02em",
+              color: "#fff",
+              maxWidth: 900,
+            }}
+          >
+            One production day. Two weeks of post.{" "}
+            <span style={{ color: "#555" }}>
+              A content library built to work across every channel.
+            </span>
+          </p>
+        </div>
+      </section>
+
       {/* ── WHAT YOU GET ─────────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#f4f4f4", padding: "120px 48px" }}>
+      <section style={{ backgroundColor: "#f5f5f5", padding: "100px 48px", borderTop: "1px solid #e8e8e8" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
-          {/* Price + intro */}
-          <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 80, alignItems: "start", marginBottom: 80 }}>
-            <div style={{ paddingTop: 6 }}>
-              <p style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#bbb", fontWeight: 500 }}>
-                What you get
-              </p>
-            </div>
+          <p style={{ ...sectionLabel, marginBottom: 48 }}>What you get</p>
+
+          {/* Price */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "end", marginBottom: 72, paddingBottom: 72, borderBottom: "1px solid #e0e0e0" }}>
             <div>
               <p
                 style={{
-                  fontSize: "clamp(56px, 8vw, 104px)",
+                  fontSize: "clamp(64px, 9vw, 112px)",
                   fontWeight: 700,
-                  letterSpacing: "-0.04em",
+                  letterSpacing: "-0.045em",
                   lineHeight: 1,
                   color: "#0a0a0a",
-                  marginBottom: 12,
+                  marginBottom: 8,
                 }}
               >
                 $13,000
               </p>
-              <p style={{ fontSize: 14, color: "#999", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 36 }}>
-                Flat rate
-              </p>
-              <p style={{ fontSize: 16, lineHeight: 1.85, color: "#666", maxWidth: 560 }}>
-                A proven process to deliver you a powerful content package to tell
-                your story through photos and video. The process is customizable
-                to address your unique communication needs based on your business
-                goals.
+              <p style={{ fontSize: 13, color: "#999", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+                Flat rate — no surprises
               </p>
             </div>
+            <p style={{ fontSize: 17, lineHeight: 1.85, color: "#555" }}>
+              A proven process to deliver you a powerful content package to tell
+              your story through photos and video. Customizable to address your
+              unique communication needs based on your business goals.
+            </p>
           </div>
 
           {/* Deliverables */}
-          <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 80 }}>
-            <div />
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 64px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 80px" }}>
 
-              {/* Films */}
-              <div>
-                <p style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#bbb", fontWeight: 500, marginBottom: 28 }}>
-                  Films
-                </p>
-                <ul style={{ listStyle: "none" }}>
-                  {films.map((f, i) => (
-                    <li
-                      key={i}
-                      style={{
-                        fontSize: 15,
-                        color: "#0a0a0a",
-                        fontWeight: 400,
-                        padding: "16px 0",
-                        borderBottom: "1px solid #e0e0e0",
-                        lineHeight: 1.4,
-                      }}
-                    >
-                      {f.title}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {/* Films */}
+            <div>
+              <p style={{ ...sectionLabel, marginBottom: 24 }}>Films</p>
+              <ul style={{ listStyle: "none" }}>
+                {films.map((f, i) => (
+                  <li
+                    key={i}
+                    style={{
+                      fontSize: 15,
+                      color: "#111",
+                      fontWeight: 400,
+                      padding: "18px 0",
+                      borderBottom: "1px solid #e0e0e0",
+                      borderTop: i === 0 ? "1px solid #e0e0e0" : "none",
+                      lineHeight: 1.4,
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 12,
+                    }}
+                  >
+                    <span style={{ width: 4, height: 4, borderRadius: "50%", backgroundColor: "#ccc", flexShrink: 0, display: "inline-block" }} />
+                    {f.title}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-              {/* Photo */}
-              <div>
-                <p style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#bbb", fontWeight: 500, marginBottom: 28 }}>
-                  Photo
-                </p>
-                <ul style={{ listStyle: "none" }}>
-                  {photos.map((p, i) => (
-                    <li
-                      key={i}
-                      style={{
-                        fontSize: 15,
-                        color: "#0a0a0a",
-                        fontWeight: 400,
-                        padding: "16px 0",
-                        borderBottom: "1px solid #e0e0e0",
-                        lineHeight: 1.4,
-                      }}
-                    >
+            {/* Photo */}
+            <div>
+              <p style={{ ...sectionLabel, marginBottom: 24 }}>Photo</p>
+              <ul style={{ listStyle: "none" }}>
+                {photos.map((p, i) => (
+                  <li
+                    key={i}
+                    style={{
+                      fontSize: 15,
+                      color: "#111",
+                      fontWeight: 400,
+                      padding: "18px 0",
+                      borderBottom: "1px solid #e0e0e0",
+                      borderTop: i === 0 ? "1px solid #e0e0e0" : "none",
+                      lineHeight: 1.4,
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: 12,
+                    }}
+                  >
+                    <span style={{ width: 4, height: 4, borderRadius: "50%", backgroundColor: "#ccc", flexShrink: 0, display: "inline-block", marginTop: 8 }} />
+                    <span>
                       {p.title}
                       {p.note && (
-                        <span style={{ display: "block", fontSize: 12, color: "#999", marginTop: 4 }}>
+                        <span style={{ display: "block", fontSize: 12, color: "#999", marginTop: 4, fontWeight: 400 }}>
                           {p.note}
                         </span>
                       )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
+
           </div>
         </div>
       </section>
 
       {/* ── THE PROCESS ──────────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#fff", padding: "120px 48px" }}>
+      <section style={{ backgroundColor: "#fff", padding: "100px 48px", borderTop: "1px solid #e8e8e8" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
+          <p style={{ ...sectionLabel, marginBottom: 48 }}>The process</p>
+
           {/* Intro */}
-          <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 80, marginBottom: 80 }}>
-            <div style={{ paddingTop: 6 }}>
-              <p style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#bbb", fontWeight: 500 }}>
-                The process
-              </p>
-            </div>
-            <div>
-              <p style={{ fontSize: "clamp(22px, 2.2vw, 28px)", fontWeight: 300, lineHeight: 1.55, color: "#0a0a0a", marginBottom: 24 }}>
-                A tight, predictable workflow that respects your time.
-              </p>
-              <p style={{ fontSize: 16, lineHeight: 1.85, color: "#666", maxWidth: 600 }}>
-                A TPW Director and producer walk you through refining your own
-                story and educate you on the steps to bring it to life. Once
-                we&apos;ve helped you refine your story, we lock in a plan and a
-                TPW Director and Director of Photography come to your business
-                for one focused production day. We interview 3–8 stakeholders,
-                capture essential B-roll, and build a suite of polished
-                deliverables designed to work across your website, pitch decks,
-                social channels, and fundraising materials.
-              </p>
-            </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, marginBottom: 72, paddingBottom: 72, borderBottom: "1px solid #ebebeb" }}>
+            <p style={{ fontSize: "clamp(22px, 2.2vw, 28px)", fontWeight: 400, lineHeight: 1.5, color: "#0a0a0a", letterSpacing: "-0.01em" }}>
+              A tight, predictable workflow that respects your time.
+            </p>
+            <p style={{ fontSize: 16, lineHeight: 1.9, color: "#555" }}>
+              A TPW Director and producer walk you through refining your own
+              story and educate you on the steps to bring it to life. Once
+              we&apos;ve locked in a plan, a TPW Director and Director of
+              Photography come to your business for one focused production day.
+              We interview 3–8 stakeholders, capture essential B-roll, and
+              build a suite of polished deliverables.
+            </p>
           </div>
 
           {/* Steps */}
-          <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 80 }}>
-            <div />
-            <div>
-              {steps.map((step, i) => (
-                <div
-                  key={i}
+          <div>
+            {steps.map((step, i) => (
+              <div
+                key={i}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "80px 1fr 1fr",
+                  gap: "0 48px",
+                  padding: "36px 0",
+                  borderBottom: "1px solid #ebebeb",
+                  alignItems: "start",
+                }}
+              >
+                <span
                   style={{
-                    display: "grid",
-                    gridTemplateColumns: "56px 1fr",
-                    gap: 32,
-                    padding: "32px 0",
-                    borderTop: "1px solid #ebebeb",
+                    fontSize: 40,
+                    fontWeight: 700,
+                    color: "#ebebeb",
+                    lineHeight: 1,
+                    letterSpacing: "-0.02em",
+                    display: "block",
+                    paddingTop: 2,
                   }}
                 >
-                  <span style={{ fontSize: 12, color: "#ccc", fontWeight: 500, paddingTop: 3, letterSpacing: "0.04em" }}>
-                    {step.n}
-                  </span>
-                  <div>
-                    <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginBottom: 10 }}>
-                      <h3 style={{ fontSize: 17, fontWeight: 600, color: "#0a0a0a", lineHeight: 1.3 }}>
-                        {step.title}
-                      </h3>
-                      {step.note && (
-                        <span style={{ fontSize: 12, color: "#bbb", fontWeight: 400, letterSpacing: "0.04em", textTransform: "uppercase" }}>
-                          {step.note}
-                        </span>
-                      )}
-                    </div>
-                    <p style={{ fontSize: 15, lineHeight: 1.75, color: "#777" }}>
-                      {step.body}
-                    </p>
-                  </div>
-                </div>
-              ))}
-              <div style={{ borderTop: "1px solid #ebebeb" }} />
-            </div>
+                  {step.n}
+                </span>
+                <h3 style={{ fontSize: 17, fontWeight: 600, color: "#0a0a0a", lineHeight: 1.4, paddingTop: 6 }}>
+                  {step.title}
+                  {step.note && (
+                    <span style={{ display: "inline", fontSize: 12, color: "#bbb", fontWeight: 400, marginLeft: 10, letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                      {step.note}
+                    </span>
+                  )}
+                </h3>
+                <p style={{ fontSize: 15, lineHeight: 1.75, color: "#777", paddingTop: 6 }}>
+                  {step.body}
+                </p>
+              </div>
+            ))}
           </div>
 
         </div>
       </section>
 
       {/* ── WHY STORY STARTER WORKS ──────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#0a0a0a", padding: "120px 48px", color: "#fff" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "200px 1fr", gap: 80 }}>
-          <div style={{ paddingTop: 6 }}>
-            <p style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#444", fontWeight: 500 }}>
-              Why it works
-            </p>
-          </div>
+      <section style={{ backgroundColor: "#0a0a0a", padding: "100px 48px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <p style={{ ...sectionLabelDark, marginBottom: 64 }}>Why it works</p>
           <ul style={{ listStyle: "none" }}>
             {reasons.map((r, i) => (
               <li
                 key={i}
                 style={{
-                  fontSize: "clamp(18px, 2vw, 24px)",
-                  fontWeight: 300,
-                  lineHeight: 1.5,
-                  color: "#ccc",
-                  padding: "28px 0",
-                  borderTop: "1px solid #1e1e1e",
-                  borderBottom: i === reasons.length - 1 ? "1px solid #1e1e1e" : "none",
+                  display: "grid",
+                  gridTemplateColumns: "80px 1fr",
+                  gap: 48,
+                  padding: "32px 0",
+                  borderTop: "1px solid #1a1a1a",
+                  borderBottom: i === reasons.length - 1 ? "1px solid #1a1a1a" : "none",
+                  alignItems: "center",
                 }}
               >
-                {r}
+                <span style={{ fontSize: 40, fontWeight: 700, color: "#1e1e1e", lineHeight: 1, letterSpacing: "-0.02em" }}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span style={{ fontSize: "clamp(18px, 2vw, 22px)", fontWeight: 300, lineHeight: 1.5, color: "#d0d0d0" }}>
+                  {r}
+                </span>
               </li>
             ))}
           </ul>
@@ -428,70 +487,58 @@ export default function Page() {
       </section>
 
       {/* ── ADD-ONS ──────────────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#fff", padding: "120px 48px" }}>
+      <section style={{ backgroundColor: "#fff", padding: "100px 48px", borderTop: "1px solid #e8e8e8" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
 
-          <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 80, marginBottom: 64 }}>
-            <div style={{ paddingTop: 6 }}>
-              <p style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#bbb", fontWeight: 500 }}>
-                Add-ons
-              </p>
-            </div>
-            <p style={{ fontSize: "clamp(20px, 2.2vw, 26px)", fontWeight: 300, lineHeight: 1.6, color: "#0a0a0a" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 64, paddingBottom: 48, borderBottom: "1px solid #ebebeb" }}>
+            <p style={sectionLabel}>Add-ons</p>
+            <p style={{ fontSize: "clamp(18px, 2vw, 22px)", fontWeight: 300, color: "#0a0a0a", maxWidth: 480, textAlign: "right", lineHeight: 1.5 }}>
               Customize your package with any of the following.
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "200px 1fr", gap: 80 }}>
-            <div />
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 64px" }}>
-              {addons.map((a, i) => (
-                <div
-                  key={i}
-                  style={{
-                    padding: "28px 0",
-                    borderTop: "1px solid #ebebeb",
-                  }}
-                >
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 16, marginBottom: 10 }}>
-                    <div>
-                      <h3 style={{ fontSize: 15, fontWeight: 600, color: "#0a0a0a", lineHeight: 1.3 }}>
-                        {a.title}
-                      </h3>
-                      {a.note && (
-                        <span style={{ fontSize: 12, color: "#999", fontWeight: 400, display: "block", marginTop: 2 }}>
-                          {a.note}
-                        </span>
-                      )}
-                    </div>
-                    <span style={{ fontSize: 14, fontWeight: 600, color: "#0a0a0a", whiteSpace: "nowrap", flexShrink: 0 }}>
-                      {a.price}
-                    </span>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 80px" }}>
+            {addons.map((a, i) => (
+              <div
+                key={i}
+                style={{ padding: "28px 0", borderBottom: "1px solid #ebebeb" }}
+              >
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 20, marginBottom: 10 }}>
+                  <div>
+                    <h3 style={{ fontSize: 15, fontWeight: 600, color: "#0a0a0a", lineHeight: 1.35 }}>
+                      {a.title}
+                    </h3>
+                    {a.note && (
+                      <span style={{ fontSize: 12, color: "#aaa", display: "block", marginTop: 2 }}>
+                        {a.note}
+                      </span>
+                    )}
                   </div>
-                  <p style={{ fontSize: 13, lineHeight: 1.75, color: "#999" }}>
-                    {a.body}
-                  </p>
+                  <span style={{ fontSize: 14, fontWeight: 700, color: "#0a0a0a", whiteSpace: "nowrap", flexShrink: 0, letterSpacing: "-0.01em" }}>
+                    {a.price}
+                  </span>
                 </div>
-              ))}
-            </div>
+                <p style={{ fontSize: 13, lineHeight: 1.75, color: "#888" }}>
+                  {a.body}
+                </p>
+              </div>
+            ))}
           </div>
 
         </div>
       </section>
 
       {/* ── FOOTER ───────────────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#0a0a0a", padding: "100px 48px", color: "#fff" }}>
+      <section style={{ backgroundColor: "#0a0a0a", padding: "100px 48px", color: "#fff", borderTop: "1px solid #1a1a1a" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "end" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "end", marginBottom: 80, paddingBottom: 80, borderBottom: "1px solid #1a1a1a" }}>
             <div>
-              <p style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "#444", fontWeight: 500, marginBottom: 28 }}>
-                The Public Works
-              </p>
+              <p style={{ ...sectionLabelDark, marginBottom: 32 }}>The Public Works</p>
               <h2
                 style={{
                   fontSize: "clamp(40px, 5.5vw, 80px)",
                   fontWeight: 700,
-                  letterSpacing: "-0.03em",
+                  letterSpacing: "-0.035em",
                   lineHeight: 1.0,
                   color: "#fff",
                 }}
@@ -502,7 +549,7 @@ export default function Page() {
               </h2>
             </div>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-end", gap: 24 }}>
-              <p style={{ fontSize: 15, color: "#555", lineHeight: 1.75, maxWidth: 380 }}>
+              <p style={{ fontSize: 16, color: "#555", lineHeight: 1.8, maxWidth: 380 }}>
                 Story Starter is a great fit for brands that know they need to
                 move but want a clear, guided process to get there.
               </p>
@@ -514,10 +561,10 @@ export default function Page() {
                   backgroundColor: "#fff",
                   color: "#0a0a0a",
                   fontSize: 14,
-                  fontWeight: 600,
+                  fontWeight: 700,
                   letterSpacing: "0.02em",
                   textDecoration: "none",
-                  borderRadius: 4,
+                  borderRadius: 2,
                 }}
               >
                 Let&apos;s talk →
@@ -528,22 +575,11 @@ export default function Page() {
             </div>
           </div>
 
-          <div
-            style={{
-              marginTop: 96,
-              paddingTop: 24,
-              borderTop: "1px solid #1a1a1a",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <p style={{ fontSize: 12, color: "#333" }}>
               © {new Date().getFullYear()} The Public Works. Denver, CO.
             </p>
-            <p style={{ fontSize: 12, color: "#2a2a2a" }}>
-              Story Starter
-            </p>
+            <p style={{ fontSize: 12, color: "#2a2a2a" }}>Story Starter</p>
           </div>
         </div>
       </section>
